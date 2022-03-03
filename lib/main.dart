@@ -15,26 +15,42 @@ class MyApp extends StatelessWidget {
       title: 'Contact Profile',
       theme: ThemeData(brightness: Brightness.dark),
       home: Scaffold(
-        appBar: AppBar(
-          leading: const Icon(
-            Icons.arrow_back,
+          appBar: AppBar(
+            leading: const Icon(
+              Icons.arrow_back,
+            ),
+            title: const Text(
+              "Panitnun's Profile",
+              textAlign: TextAlign.end,
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.favorite_border,
+                  color: Colors.red,
+                ),
+                onPressed: () {
+                  print("Contact is starred");
+                },
+              )
+            ],
           ),
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.favorite_border,
-                color: Colors.red,
-              ),
-              onPressed: () {
-                print("Contact is starred");
-              },
-            )
-          ],
-        ),
-        body: Container(
-          color: Colors.grey,
-        ),
-      ),
+          body: ListView(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    height: 250,
+                    child: Image.asset(
+                      "images/profilePic.JPG",
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                ],
+              )
+            ],
+          )),
     );
   }
 }
