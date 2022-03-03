@@ -11,11 +11,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Contact Profile',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: Scaffold(
+          appBar: AppBar(
+        leading: const Icon(
+          Icons.arrow_back,
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.favorite,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              print("Contact is starred");
+            },
+          )
+        ],
+      )),
     );
   }
 }
