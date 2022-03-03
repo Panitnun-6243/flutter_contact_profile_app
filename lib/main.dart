@@ -11,29 +11,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Contact Profile',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(brightness: Brightness.dark),
       home: Scaffold(
-          appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        appBar: AppBar(
+          leading: const Icon(
+            Icons.arrow_back,
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(
+                Icons.favorite_border,
+                color: Colors.red,
+              ),
+              onPressed: () {
+                print("Contact is starred");
+              },
+            )
+          ],
         ),
-        backgroundColor: Colors.white,
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.favorite,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              print("Contact is starred");
-            },
-          )
-        ],
-      )),
+        body: Container(
+          color: Colors.grey,
+        ),
+      ),
     );
   }
 }
