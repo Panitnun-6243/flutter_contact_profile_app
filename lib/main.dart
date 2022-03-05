@@ -60,13 +60,82 @@ class MyApp extends StatelessWidget {
                     height: 60,
                     color: const Color.fromARGB(179, 87, 81, 81),
                   ),
-                  const Divider(
-                    color: Colors.red,
-                  ),
+                  // const Divider(
+                  //   color: Colors.grey,
+                  //   thickness: 2,
+                  // ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 12, bottom: 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        buildCallButton(),
+                        buildTextButton(),
+                        buildVideoCallButton(),
+                        buildEmailButton()
+                      ],
+                    ),
+                  )
                 ],
               )
             ],
           )),
+    );
+  }
+
+  Widget buildCallButton() {
+    return Column(
+      children: [
+        IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.call,
+              color: Colors.red,
+            )),
+        const Text("Call")
+      ],
+    );
+  }
+
+  Widget buildTextButton() {
+    return Column(
+      children: [
+        IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.message,
+              color: Colors.red,
+            )),
+        const Text("Chat")
+      ],
+    );
+  }
+
+  Widget buildVideoCallButton() {
+    return Column(
+      children: [
+        IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.video_call,
+              color: Colors.red,
+            )),
+        const Text("Video")
+      ],
+    );
+  }
+
+  Widget buildEmailButton() {
+    return Column(
+      children: [
+        IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.mail,
+              color: Colors.red,
+            )),
+        const Text("Mail")
+      ],
     );
   }
 }
