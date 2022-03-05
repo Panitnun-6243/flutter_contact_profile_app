@@ -46,7 +46,23 @@ class MyApp extends StatelessWidget {
                       "images/profilePic.JPG",
                       fit: BoxFit.cover,
                     ),
-                  )
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "Panitnun Suvannabun",
+                          style: TextStyle(fontSize: 26),
+                        )
+                      ],
+                    ),
+                    height: 60,
+                    color: const Color.fromARGB(179, 87, 81, 81),
+                  ),
+                  const Divider(
+                    color: Colors.red,
+                  ),
                 ],
               )
             ],
