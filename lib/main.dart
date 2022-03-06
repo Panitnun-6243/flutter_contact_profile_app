@@ -75,7 +75,20 @@ class MyApp extends StatelessWidget {
                         buildEmailButton()
                       ],
                     ),
-                  )
+                  ),
+                  Container(
+                    child: Column(children: [
+                      mobilePhoneListTile(),
+                      const Divider(
+                        thickness: 2,
+                      ),
+                      otherPhoneListTile()
+                    ]),
+                    color: const Color.fromARGB(179, 87, 81, 81),
+                    margin: const EdgeInsets.only(top: 5, bottom: 5),
+                  ),
+                  emailListTile(),
+                  addressListTile()
                 ],
               )
             ],
@@ -136,6 +149,68 @@ class MyApp extends StatelessWidget {
             )),
         const Text("Mail")
       ],
+    );
+  }
+
+  Widget mobilePhoneListTile() {
+    return ListTile(
+      leading: const Icon(
+        Icons.call,
+        color: Colors.white,
+      ),
+      title: const Text("080-000-4871"),
+      subtitle: const Text("Mobile"),
+      trailing: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.message,
+            color: Colors.white,
+          )),
+    );
+  }
+
+  Widget otherPhoneListTile() {
+    return ListTile(
+      leading: const Icon(
+        Icons.call,
+        color: Colors.white,
+      ),
+      title: const Text("040-000-4663"),
+      subtitle: const Text("Other"),
+      trailing: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.message,
+            color: Colors.white,
+          )),
+    );
+  }
+
+  Widget emailListTile() {
+    return ListTile(
+      leading: const Icon(
+        Icons.mail,
+        color: Colors.white,
+      ),
+      title: const Text("Panitnun.6243@gmail.com"),
+      subtitle: const Text("Mail"),
+    );
+  }
+
+  Widget addressListTile() {
+    return ListTile(
+      leading: const Icon(
+        Icons.location_on,
+        color: Colors.white,
+      ),
+      title: const Text("711-2880 Nulla St.Mankato Mississippi 96522"),
+      subtitle: const Text("Address"),
+      trailing: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.directions,
+            color: Colors.white,
+          )),
     );
   }
 }
